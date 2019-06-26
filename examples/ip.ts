@@ -14,7 +14,7 @@ async function testIP( ): Promise< void >
 		server.on( 'error', reject );
 	} );
 
-	const { port } = < AddressInfo >server.address( )
+	const { port } = < AddressInfo >server.address( );
 
 	const [ result2 ] = await lsof( );
 

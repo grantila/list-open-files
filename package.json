@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "node_modules/.bin/rimraf dist && node_modules/.bin/tsc -p .",
-    "jest": "node_modules/.bin/jest --detectOpenHandles",
+    "jest": "node_modules/.bin/jest",
     "test": "npm run jest -- --coverage",
     "buildtest": "npm run build && npm run jest",
     "buildtestcov": "npm run build && npm run test",

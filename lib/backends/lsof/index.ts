@@ -279,7 +279,7 @@ function parseParts( parts: Array< Buffer > )
 
 		const rawValue = part.slice( 1 ).toString( );
 
-		const fieldInfo = fields[ field ]
+		const fieldInfo = fields[ field ];
 
 		const value = fieldInfo && fieldInfo.handler
 			? fieldInfo.handler( rawValue )
