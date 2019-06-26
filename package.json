@@ -1,0 +1,61 @@
+{
+  "name": "list-open-files",
+  "version": "0.0.1",
+  "description": "lsof for Node.js but with a modern API",
+  "author": "Gustaf Räntilä",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grantila/list-open-files/issues"
+  },
+  "homepage": "https://github.com/grantila/list-open-files#readme",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node_modules/.bin/rimraf dist && node_modules/.bin/tsc -p .",
+    "jest": "node_modules/.bin/jest --detectOpenHandles",
+    "test": "npm run jest -- --coverage",
+    "buildtest": "npm run build && npm run jest",
+    "buildtestcov": "npm run build && npm run test",
+    "coverage": "node_modules/.bin/nyc report --reporter=html",
+    "coveralls": "cat coverage/lcov.info | node_modules/.bin/coveralls",
+    "prepack": "npm run build && npm run test",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release",
+    "cz": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grantila/list-open-files"
+  },
+  "keywords": [
+    "lsof",
+    "list",
+    "open files",
+    "open",
+    "files"
+  ],
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "semantic-release": "^15.13.16",
+    "travis-deploy-once": "^5.0.11",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
