@@ -22,7 +22,6 @@
     "test": "npm run jest -- --coverage",
     "buildtest": "npm run build && npm run jest",
     "buildtestcov": "npm run build && npm run test",
-    "coverage": "node_modules/.bin/nyc report --reporter=html",
     "coveralls": "cat coverage/lcov.info | node_modules/.bin/coveralls",
     "prepack": "npm run build && npm run test",
     "travis-deploy-once": "travis-deploy-once",
