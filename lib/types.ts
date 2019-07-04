@@ -110,9 +110,11 @@ export interface Process
 	cwd?: InternalFile;
 }
 
+export type ProcessFile = File | FileDescriptorIP | UnknownFile;
+
 export interface ProcessInfo
 {
 	process: Process;
-	files: Array< File | FileDescriptorIP | UnknownFile >;
+	files: Array< ProcessFile >;
 	texts: Array< InternalFile >;
 }
