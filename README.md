@@ -1,6 +1,5 @@
 [![npm version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
-[![coverage status][coverage-image]][coverage-url]
 [![Greenkeeper badge](https://badges.greenkeeper.io/grantila/list-open-files.svg)](https://greenkeeper.io/)
 [![Language grade: JavaScript][lgtm-image]][lgtm-url]
 
@@ -37,7 +36,7 @@ The return value is eventually an array (even if only one pid is queried) of zer
 interface ProcessInfo
 {
 	process: Process;
-	files: Array< File | FileDescriptorIP | UnknownFile >;
+	files: Array< ProcessFile >;
 	texts: Array< InternalFile >;
 }
 ```
@@ -435,7 +434,7 @@ This will output:
 interface ProcessInfo
 {
 	process: Process;
-	files: Array< File | FileDescriptorIP | UnknownFile >;
+	files: Array< ProcessFile >;
 	texts: Array< InternalFile >;
 }
 ```
@@ -453,6 +452,12 @@ interface Process
 	name?: string;
 	cwd?: InternalFile;
 }
+```
+
+### ProcessFile
+
+```ts
+type ProcessFile = File | FileDescriptorIP | UnknownFile;
 ```
 
 ### InternalFile
@@ -574,7 +579,5 @@ export interface IP
 [npm-url]: https://npmjs.org/package/list-open-files
 [travis-image]: https://img.shields.io/travis/grantila/list-open-files/master.svg
 [travis-url]: https://travis-ci.org/grantila/list-open-files
-[coverage-image]: https://coveralls.io/repos/github/grantila/list-open-files/badge.svg?branch=master
-[coverage-url]: https://coveralls.io/github/grantila/list-open-files?branch=master
 [lgtm-image]: https://img.shields.io/lgtm/grade/javascript/g/grantila/list-open-files.svg?logo=lgtm&logoWidth=18
 [lgtm-url]: https://lgtm.com/projects/g/grantila/list-open-files/context:javascript
